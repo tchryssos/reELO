@@ -56,6 +56,7 @@ module.exports = {
 			components: path.join(__dirname, 'src/components'),
 			pages: path.join(__dirname, 'src/pages'),
 			constants: path.join(__dirname, 'src/constants'),
+			logic: path.join(__dirname, 'src/logic'),
 		},
 	},
 }

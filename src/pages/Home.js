@@ -1,16 +1,32 @@
 import React, { PureComponent } from 'React'
+import axios from 'axios'
+import { API_URL, PLAYER_LIST } from 'constants/api'
 import { RankingTable, MatchForm } from 'components'
 
 class Home extends PureComponent {
 	constructor(props) {
 		super(props)
 		this.state = {
-			data: [
-				{ rank: 1, name: 'Troy', elo: 2000, id: 111 },
-				{ rank: 2, name: 'Bill', elo: 1800, id: 222 },
-				{ rank: 3, name: 'Charlie', elo: 1700, id: 333 },
-			],
+			data: [],
 		}
+	}
+
+	componentDidMount() {
+		axios.get(`${API_URL}/${PLAYER_LIST}`).then(
+			(response) => {
+				const playerList = response.data.map(player => (
+					{
+						name: player.name,
+						id: player.id,
+						elo: Math.round(player.elo),
+					}
+				))
+				const newState = Object.assign({}, this.state, {
+					data: playerList,
+				})
+				this.setState(newState)
+			},
+		)
 	}
 
 	render() {

@@ -8,15 +8,10 @@ class MatchForm extends PureComponent {
 				<h2>Match Form</h2>
 				<form>
 					<div>
-						<p>Player 1</p>
-						<MatchFormPlayerSelect players={this.props.data} />
-						<p>Player 2</p>
-						<MatchFormPlayerSelect players={this.props.data} />
 						<p>Winner</p>
-						<MatchFormPlayerSelect
-							players={this.props.data}
-							characterChoice={false}
-						/>
+						<MatchFormPlayerSelect players={this.props.data} />
+						<p>Loser</p>
+						<MatchFormPlayerSelect players={this.props.data} />
 					</div>
 				</form>
 			</div>

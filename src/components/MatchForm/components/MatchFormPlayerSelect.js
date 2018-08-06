@@ -57,7 +57,7 @@ class MatchFormPlayerSelect extends PureComponent {
 						{this.playerOptions}
 					</select>
 				</div>
-				{this.characterDisplay}
+				{/* {this.characterDisplay} */}
 			</div>
 		)
 	}

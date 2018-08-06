@@ -14,15 +14,8 @@ class Home extends PureComponent {
 	componentDidMount() {
 		axios.get(`${API_URL}/${PLAYER_LIST}`).then(
 			(response) => {
-				const playerList = response.data.map(player => (
-					{
-						name: player.name,
-						id: player.id,
-						elo: Math.round(player.elo),
-					}
-				))
 				const newState = Object.assign({}, this.state, {
-					data: playerList,
+					data: response.data,
 				})
 				this.setState(newState)
 			},

@@ -7,7 +7,7 @@ class Home extends PureComponent {
 	constructor(props) {
 		super(props)
 		this.state = {
-			data: [],
+			playerData: [],
 		}
 	}
 
@@ -15,7 +15,7 @@ class Home extends PureComponent {
 		axios.get(`${API_URL}/${PLAYER_LIST}`).then(
 			(response) => {
 				const newState = Object.assign({}, this.state, {
-					data: response.data,
+					playerData: response.data,
 				})
 				this.setState(newState)
 			},
@@ -26,8 +26,8 @@ class Home extends PureComponent {
 		return (
 			<div>
 				<h1>Reelio Smash</h1>
-				<RankingTable data={this.state.data} />
-				<MatchForm data={this.state.data} />
+				<RankingTable playerData={this.state.playerData} />
+				<MatchForm playerData={this.state.playerData} />
 			</div>
 		)
 	}

@@ -3,7 +3,7 @@ import { PlayerDataRow } from './components'
 
 class RankingTable extends PureComponent {
 	get tableData() {
-		return this.props.data.map(
+		return this.props.playerData.map(
 			player => <PlayerDataRow player={player} />,
 		)
 	}
@@ -26,7 +26,7 @@ class RankingTable extends PureComponent {
 }
 
 RankingTable.propTypes = {
-	data: PropTypes.array,
+	playerData: PropTypes.array,
 }
 
 export default RankingTable

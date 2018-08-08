@@ -1,4 +1,5 @@
 import React, { PureComponent, PropTypes } from 'React'
+import { API_URL } from 'constants/api'
 import { MatchFormPlayerSelect } from './components'
 
 class MatchForm extends PureComponent {
@@ -9,10 +10,11 @@ class MatchForm extends PureComponent {
 				<form>
 					<div>
 						<p>Winner</p>
-						<MatchFormPlayerSelect players={this.props.data} />
+						<MatchFormPlayerSelect players={this.props.playerData} fieldName="winner" />
 						<p>Loser</p>
-						<MatchFormPlayerSelect players={this.props.data} />
+						<MatchFormPlayerSelect players={this.props.playerData} fieldName="loser" />
 					</div>
+					<input type="submit" method="PATCH" action={`${API_URL}/update-elo`} />
 				</form>
 			</div>
 		)
@@ -20,7 +22,7 @@ class MatchForm extends PureComponent {
 }
 
 MatchForm.propTypes = {
-	data: PropTypes.array,
+	playerData: PropTypes.array,
 }
 
 export default MatchForm

@@ -62,14 +62,17 @@ class Home extends PureComponent {
 	render() {
 		return (
 			<div>
-				<h1 className="header">Reelio Smash</h1>
-				<div className="container">
-					<RankingTable playerData={this.state.playerData} />
-					<MatchForm
-						playerData={this.state.playerData}
-						onSubmit={this.formSubmit}
-						onChange={this.handleChangePlayerForm}
-					/>
+				<div className="background" />
+				<div>
+					<h1 className="header">Reelio Smash</h1>
+					<div className="container">
+						<RankingTable playerData={this.state.playerData} />
+						<MatchForm
+							playerData={this.state.playerData}
+							onSubmit={this.formSubmit}
+							onChange={this.handleChangePlayerForm}
+						/>
+					</div>
 				</div>
 			</div>
 		)

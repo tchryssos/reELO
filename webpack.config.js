@@ -58,6 +58,7 @@ module.exports = {
 			constants: path.join(__dirname, 'src/constants'),
 			logic: path.join(__dirname, 'src/logic'),
 			styles: path.join(__dirname, 'src/styles'),
+			static: path.join(__dirname, 'src/static'),
 		},
 	},
 }

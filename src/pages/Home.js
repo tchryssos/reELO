@@ -39,7 +39,7 @@ class Home extends PureComponent {
 	// Match Form
 	formSubmit(event) {
 		event.preventDefault()
-		axios.post(`${API_URL}/${UPDATE_ELO}`, {
+		return axios.post(`${API_URL}/${UPDATE_ELO}`, {
 			winner: this.state.matchForm.winner,
 			loser: this.state.matchForm.loser,
 		}).then(
@@ -62,7 +62,6 @@ class Home extends PureComponent {
 	render() {
 		return (
 			<div>
-				<div className="background" />
 				<div>
 					<h1 className="header">Reelio Smash</h1>
 					<div className="container">
@@ -74,6 +73,7 @@ class Home extends PureComponent {
 						/>
 					</div>
 				</div>
+				<div className="background" />
 			</div>
 		)
 	}

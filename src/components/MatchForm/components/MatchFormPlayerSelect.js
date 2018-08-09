@@ -1,10 +1,11 @@
 import React, { PropTypes, PureComponent } from 'React'
 import { SMASH_WII_U_CHARACTERS as CHARS } from 'constants/characters'
+import { sortBy } from 'lodash'
 import styles from '../styles.scss' // eslint-disable-line no-unused-vars
 
 class MatchFormPlayerSelect extends PureComponent {
 	get playerOptions() {
-		const players = this.props.players.map(
+		const players = sortBy(this.props.players, ['name']).map(
 			player => (
 				<option value={player.id}>
 					{player.name}

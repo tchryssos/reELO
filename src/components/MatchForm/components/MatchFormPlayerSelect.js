@@ -53,7 +53,7 @@ class MatchFormPlayerSelect extends PureComponent {
 		return (
 			<div>
 				<div>
-					<select name={this.props.fieldName}>
+					<select name={this.props.fieldName} onChange={this.props.onChange}>
 						{this.playerOptions}
 					</select>
 				</div>
@@ -66,6 +66,7 @@ class MatchFormPlayerSelect extends PureComponent {
 MatchFormPlayerSelect.propTypes = {
 	characterChoice: PropTypes.bool,
 	fieldName: PropTypes.string,
+	onChange: PropTypes.func,
 	players: PropTypes.array,
 }
 

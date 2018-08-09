@@ -1,4 +1,4 @@
-import React, { PropTypes, PureComponent } from 'React'
+import React, { PropTypes, PureComponent } from 'react'
 import { SMASH_WII_U_CHARACTERS as CHARS } from 'constants/characters'
 import { sortBy } from 'lodash'
 import styles from '../styles.scss' // eslint-disable-line no-unused-vars

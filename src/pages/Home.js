@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'React'
+import React, { PureComponent } from 'react'
 import axios from 'axios'
 import { API_URL, PLAYER_LIST, UPDATE_ELO } from 'constants/api'
 import { RankingTable, MatchForm } from 'components'

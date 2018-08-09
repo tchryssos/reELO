@@ -1,4 +1,4 @@
-import React, { PropTypes, PureComponent } from 'React'
+import React, { PropTypes, PureComponent } from 'react'
 import styles from '../styles.scss' // eslint-disable-line no-unused-vars
 
 class PlayerDataRow extends PureComponent {

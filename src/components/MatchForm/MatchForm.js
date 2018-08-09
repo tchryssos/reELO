@@ -1,4 +1,4 @@
-import React, { PureComponent, PropTypes } from 'React'
+import React, { PureComponent, PropTypes } from 'react'
 import { MatchFormPlayerSelect } from './components'
 import styles from './styles.scss' // eslint-disable-line no-unused-vars
 

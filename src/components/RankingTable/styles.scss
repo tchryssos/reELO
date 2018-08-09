@@ -1,0 +1,10 @@
+@import 'styles/theme';
+
+.table {
+  width: 100%;
+  text-align: center;
+}
+
+.table-header {
+  @include content-header(1em);
+}

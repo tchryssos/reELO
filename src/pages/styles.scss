@@ -1,12 +1,5 @@
 @import 'styles/theme';
 
 .header {
-  font-family: 'Archivo Black', sans-serif;
-  text-align: center;
-  font-size: 80px;
-}
-
-.content-container {
-  display: flex;
-  justify-content: space-around;
+  @include content-header(72px);
 }

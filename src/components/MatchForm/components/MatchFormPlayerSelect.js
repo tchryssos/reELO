@@ -1,5 +1,6 @@
 import React, { PropTypes, PureComponent } from 'React'
 import { SMASH_WII_U_CHARACTERS as CHARS } from 'constants/characters'
+import styles from '../styles.scss' // eslint-disable-line no-unused-vars
 
 class MatchFormPlayerSelect extends PureComponent {
 	get playerOptions() {
@@ -51,14 +52,13 @@ class MatchFormPlayerSelect extends PureComponent {
 
 	render() {
 		return (
-			<div>
-				<div>
-					<select name={this.props.fieldName} onChange={this.props.onChange}>
-						{this.playerOptions}
-					</select>
-				</div>
-				{/* {this.characterDisplay} */}
-			</div>
+			<select
+				name={this.props.fieldName}
+				onChange={this.props.onChange}
+				className="select"
+			>
+				{this.playerOptions}
+			</select>
 		)
 	}
 }

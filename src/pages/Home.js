@@ -63,7 +63,7 @@ class Home extends PureComponent {
 		return (
 			<div>
 				<h1 className="header">Reelio Smash</h1>
-				<div className="content-container">
+				<div className="container">
 					<RankingTable playerData={this.state.playerData} />
 					<MatchForm
 						playerData={this.state.playerData}

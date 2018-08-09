@@ -1,0 +1,18 @@
+@import 'styles/theme';
+
+
+.match-form {
+  min-width: 200px;
+}
+
+.form-field {
+  @include content-header(1em);
+}
+
+.select {
+  margin: auto 0;
+}
+
+.submit {
+  margin-top: 8px;
+}

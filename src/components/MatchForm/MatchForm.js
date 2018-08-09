@@ -1,27 +1,34 @@
 import React, { PureComponent, PropTypes } from 'React'
 import { MatchFormPlayerSelect } from './components'
+import styles from './styles.scss' // eslint-disable-line no-unused-vars
 
 class MatchForm extends PureComponent {
 	render() {
 		return (
-			<div>
-				<h2>Match Form</h2>
+			<div className="match-form">
+				<h2 className="base-header">Match Form</h2>
 				<form onSubmit={this.props.onSubmit}>
 					<div>
-						<p>Winner</p>
-						<MatchFormPlayerSelect
-							players={this.props.playerData}
-							fieldName="winner"
-							onChange={this.props.onChange}
-						/>
-						<p>Loser</p>
-						<MatchFormPlayerSelect
-							players={this.props.playerData}
-							fieldName="loser"
-							onChange={this.props.onChange}
-						/>
+						<div className="end-container">
+							<p className="form-field">Winner: </p>
+							<MatchFormPlayerSelect
+								players={this.props.playerData}
+								fieldName="winner"
+								onChange={this.props.onChange}
+							/>
+						</div>
+						<div className="end-container">
+							<p className="form-field">Loser: </p>
+							<MatchFormPlayerSelect
+								players={this.props.playerData}
+								fieldName="loser"
+								onChange={this.props.onChange}
+							/>
+						</div>
 					</div>
-					<input type="submit" />
+					<div className="container">
+						<input type="submit" className="submit" />
+					</div>
 				</form>
 			</div>
 		)

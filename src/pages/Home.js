@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'React'
 import axios from 'axios'
-import { API_URL, PLAYER_LIST } from 'constants/api'
+import { API_URL, PLAYER_LIST, UPDATE_ELO } from 'constants/api'
 import { RankingTable, MatchForm } from 'components'
+
+import styles from './styles.scss' // eslint-disable-line no-unused-vars
 
 class Home extends PureComponent {
 	constructor(props) {
@@ -19,6 +21,10 @@ class Home extends PureComponent {
 		this.handleChangePlayerForm = this.handleChangePlayerForm.bind(this)
 	}
 
+	componentDidMount() {
+		this.getPlayers()
+	}
+
 	getPlayers() {
 		axios.get(`${API_URL}/${PLAYER_LIST}`).then(
 			(response) => {
@@ -30,13 +36,10 @@ class Home extends PureComponent {
 		)
 	}
 
-	componentDidMount() {
-		this.getPlayers()
-	}
-
+	// Match Form
 	formSubmit(event) {
 		event.preventDefault()
-		axios.post(`${API_URL}/update-elo`, {
+		axios.post(`${API_URL}/${UPDATE_ELO}`, {
 			winner: this.state.matchForm.winner,
 			loser: this.state.matchForm.loser,
 		}).then(
@@ -55,16 +58,19 @@ class Home extends PureComponent {
 		this.setState(newState)
 	}
 
+	// Render
 	render() {
 		return (
 			<div>
-				<h1>Reelio Smash</h1>
-				<RankingTable playerData={this.state.playerData} />
-				<MatchForm
-					playerData={this.state.playerData}
-					onSubmit={this.formSubmit}
-					onChange={this.handleChangePlayerForm}
-				/>
+				<h1 className="header">Reelio Smash</h1>
+				<div className="content-container">
+					<RankingTable playerData={this.state.playerData} />
+					<MatchForm
+						playerData={this.state.playerData}
+						onSubmit={this.formSubmit}
+						onChange={this.handleChangePlayerForm}
+					/>
+				</div>
 			</div>
 		)
 	}
